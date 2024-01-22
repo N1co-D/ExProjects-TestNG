@@ -12,7 +12,7 @@ public class WarehouseTest {
     Warehouse storehouse = new Warehouse();
 
     @Test
-    public void testAddProduct() {
+    public void addProductTest() {
         Product good = new Product(ID, NAME, PRICE, QUANTITY);
         storehouse.addProduct(good);
         List<Product> products = storehouse.getProducts();
@@ -20,7 +20,7 @@ public class WarehouseTest {
     }
 
     @Test
-    public void testRemoveProduct() {
+    public void removeProductTest() {
         Product product = new Product(ID, NAME, PRICE, QUANTITY);
         storehouse.addProduct(product);
         storehouse.removeProduct(product);
@@ -29,7 +29,7 @@ public class WarehouseTest {
     }
 
     @Test
-    public void testFindProductById() {
+    public void findProductByIdTest() {
         Product product = new Product(ID, NAME, PRICE, QUANTITY);
         storehouse.addProduct(product);
 
@@ -39,7 +39,7 @@ public class WarehouseTest {
     }
 
     @Test
-    public void testFindNonexistentProductById() {
+    public void findNonexistentProductByIdTest() {
         Product foundProduct = storehouse.findProductById((int) Math.random());
         Assert.assertNull(foundProduct);
     }
